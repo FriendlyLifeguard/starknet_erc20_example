@@ -37,7 +37,7 @@ mod MyToken {
         // Call the internal function that writes decimals to storage
         self._set_decimals(decimals);
 
-        // Initialize ERC20
+        // Customize your token's name and symbol
         let name = 'DynamicTokenFixed';
         let symbol = 'DTF';
 
