@@ -1,5 +1,5 @@
 "use client";
-import { useAccount, useConnect, useDisconnect } from "@starknet-react/core";
+import { useAccount, useDisconnect } from "@starknet-react/core";
 import { useMemo } from "react";
 import { Button } from "./ui/Button";
 

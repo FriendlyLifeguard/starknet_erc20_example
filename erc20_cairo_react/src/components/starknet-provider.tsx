@@ -11,7 +11,6 @@ import {
   voyager,
   type ExplorerFactory
 } from "@starknet-react/core";
-import { alchemyProvider } from "@starknet-react/core"
 
 export function StarknetProvider({ children }: { children: ReactNode }) {
   const { connectors } = useInjectedConnectors({

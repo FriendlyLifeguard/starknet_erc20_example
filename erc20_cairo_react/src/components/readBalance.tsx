@@ -1,5 +1,5 @@
 "use client"
-import { useAccount, useContractRead, useContractWrite, useContract, useNetwork } from "@starknet-react/core";
+import { useAccount, useContractRead} from "@starknet-react/core";
 
 const ContractAddress = "0x03E4273BF47991E21d0c80B8C39f71dA1274Db22534fc74F7cC4C8C14928639A";
 const DECIMALS = 18;

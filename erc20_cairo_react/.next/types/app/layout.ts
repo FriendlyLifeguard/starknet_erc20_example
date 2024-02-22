@@ -1,4 +1,4 @@
-// File: /Users/byung/Desktop/productive/Developer/Projects/OpenSource/starknet_erc20/starknet-react-example/erc20_cairo_react/src/app/layout.tsx
+// File: /Users/byung/Desktop/productive/Developer/Projects/OpenSource/starknet_erc20/starknet_erc20/erc20_cairo_react/src/app/layout.tsx
 import * as entry from '../../../src/app/layout.js'
 import type { ResolvingMetadata, ResolvingViewport } from 'next/dist/lib/metadata/types/metadata-interface.js'
 

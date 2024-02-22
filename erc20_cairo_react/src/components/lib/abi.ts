@@ -1,5 +1,3 @@
-import { Abi } from "starknet"
-
 export const contractABI = [
     {
       "type": "impl",

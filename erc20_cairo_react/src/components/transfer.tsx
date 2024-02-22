@@ -1,5 +1,4 @@
 import { useState, useMemo } from "react"
-import dynamic from "next/dynamic";
 import { contractABI } from "@/components/lib/abi"
 import { useAccount, useContract, useContractWrite } from "@starknet-react/core"
 import { Uint256, cairo } from "starknet"
@@ -12,24 +11,21 @@ const DECIMALS = 18;
 
 export default function Transfer() {
 
-const { address } = useAccount();
-const [ recipient, setRecipient ] = useState('');
-const [ amount, setAmount ] = useState('')
-
+  const { address } = useAccount();
+  const [ recipient, setRecipient ] = useState('');
+  const [ amount, setAmount ] = useState('')
 
   const { contract } = useContract({
     abi: contractABI,
     address: ContractAddress
 });
 
-
-
   const newAmount: Uint256 = cairo.uint256((amount as any) * (10 ** DECIMALS))
     
   const calls = useMemo(() => {
     if (!address || !contract || !recipient) return [];
     return contract.populateTransaction["transfer"]!(recipient, newAmount);
-  }, [contract, address])
+  }, [contract, address, recipient, newAmount])
 
 
   const {
