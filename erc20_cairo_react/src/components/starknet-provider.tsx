@@ -1,6 +1,5 @@
 "use client";
 import { ReactNode } from "react";
-import { useState } from "react";
 import { devnet, goerli, mainnet } from "@starknet-react/chains";
 import {
   StarknetConfig,
