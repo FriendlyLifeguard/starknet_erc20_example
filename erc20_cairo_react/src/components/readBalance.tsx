@@ -39,9 +39,6 @@ export default function ReadBalance() {
     watch: true,
   });
 
-  console.log({data})
-  console.log({address})
-
   if (isLoading) return <div>Loading ...</div>;
   if (isError || !data ) return <div>{error?.message}</div>;
   //@ts-ignore

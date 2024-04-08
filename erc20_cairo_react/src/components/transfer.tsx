@@ -4,8 +4,6 @@ import { useAccount, useContract, useContractWrite } from "@starknet-react/core"
 import { Uint256, cairo } from "starknet"
 import { Button } from "./ui/Button"
 
-
-
 const ContractAddress = "0x04e965f74cf456a71ccc0b1b7aed651c1b738d233dfb447ca7e6b2cf5bb5c54c";
 const DECIMALS = 18;
 
@@ -26,8 +24,6 @@ export default function Transfer() {
     if ( !contract || !recipient || !address) return [];
     return contract.populateTransaction["transfer"]!(recipient, newAmount);
   }, [contract, address, recipient, newAmount])
-
-  console.log(recipient)
   
   const {
     writeAsync,

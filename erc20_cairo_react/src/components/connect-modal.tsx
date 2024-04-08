@@ -5,11 +5,12 @@ import Transfer from "@/components/transfer";
 import { useStarknetkitConnectModal, connect, disconnect } from "starknetkit";
 import { useConnect, useDisconnect, useAccount, useNetwork} from "@starknet-react/core";
 import { Card } from '@radix-ui/themes';
+import { InjectedConnector } from "starknetkit/injected"
 
 
 function Connect() {
   
-  const { connect, connectors } = useConnect();
+  const { connect } = useConnect();
   const { disconnect } = useDisconnect();
   const { account, address } = useAccount()
   const { chain } = useNetwork();
@@ -19,14 +20,22 @@ function Connect() {
   
 
   const connectWallet = async() => {
+
+    const connectors = [
+      new InjectedConnector({ options: {id: "argentX", name: "Argent X" }}),
+      new InjectedConnector({ options: {id: "braavos", name: "Braavos" }})
+    ]
+
     const { starknetkitConnectModal } = useStarknetkitConnectModal({
-      connectors: connectors
+      connectors: connectors,
+      dappName: "ERC20 UI", 
+      modalTheme: "system"
+
     })
  
     const { connector } = await starknetkitConnectModal()
     await connect({ connector })
   }
-  
 
   return (
     <div>
